@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mbbill/undotree'
     Plug 'hlissner/zsh-autopair'
     Plug 'sheerun/vim-polyglot'
@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-scripts/indentpython.vim'
 "   Plug 'majutsushi/tagbar'
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-thems'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/AutoComplPop'
     Plug 'davidhalter/jedi-vim'
 call plug#end()
