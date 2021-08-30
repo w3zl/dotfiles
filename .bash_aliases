@@ -1,4 +1,5 @@
 alias wallpaper="$HOME/.local/bin/wallpaper-wrap"
+alias la="ls -la"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
