@@ -135,14 +135,14 @@ set $ws8 8
 
 # switch to workspace
 
-bindsym $mod+1 exec $HOME/.i3/smartmv 1
-bindsym $mod+2 exec $HOME/.i3/smartmv 2
-bindsym $mod+3 exec $HOME/.i3/smartmv 3
-bindsym $mod+4 exec $HOME/.i3/smartmv 4
-bindsym $mod+5 exec $HOME/.i3/smartmv 5
-bindsym $mod+6 exec $HOME/.i3/smartmv 6
-bindsym $mod+7 exec $HOME/.i3/smartmv 7
-bindsym $mod+8 exec $HOME/.i3/smartmv 8
+bindsym $mod+1 exec $HOME/.config/i3/smartmv 1
+bindsym $mod+2 exec $HOME/.config/i3/smartmv 2
+bindsym $mod+3 exec $HOME/.config/i3/smartmv 3
+bindsym $mod+4 exec $HOME/.config/i3/smartmv 4
+bindsym $mod+5 exec $HOME/.config/i3/smartmv 5
+bindsym $mod+6 exec $HOME/.config/i3/smartmv 6
+bindsym $mod+7 exec $HOME/.config/i3/smartmv 7
+bindsym $mod+8 exec $HOME/.config/i3/smartmv 8
 
 # Move focused container to workspace
 #bindsym $mod+Shift+1 move container to workspace $ws1
