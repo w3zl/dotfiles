@@ -1,0 +1,5 @@
+#/bin/bash
+
+target=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true) | select(.visible==true) | .output')
+i3-msg workspace $ws"$1"
+i3-msg move workspace to $target
