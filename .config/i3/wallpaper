@@ -1,0 +1,1 @@
+xwinwrap -fs -ov -ni -- mpv --loop -wid WID ~/Pictures/sakura.mp4
