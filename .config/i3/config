@@ -1,4 +1,8 @@
-# i3 config file (v4) Please see http://i3wm.org/docs/userguide.html for a complete reference!  Set mod key (Mod1=<Alt>, Mod4=<Super>)
+# i3 config file (v4)
+
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
 # set default desktop layout (default is tiling)
@@ -23,11 +27,14 @@ font xft:URWGothic-Book 11
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+# start a terminal
+bindsym Ctrl+Shift+t exec terminal
+
 # kill focused window
 bindsym Ctrl+Shift+w kill
 
 # start program launcher
-bindsym $mod+Return exec --no-startup-id dmenu_run
+bindsym $mod+Return exec --no-startup-id dmenu_recency -nb '#b23831' -sb '#532f35'
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -37,10 +44,10 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+#bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -49,9 +56,20 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym Ctrl+Shift+f exec firefox 
-bindsym Mod1+Ctrl+t exec alacritty
 bindsym $mod+F3 exec pcmanfm
+# bindsym $mod+F3 exec ranger
+bindsym $mod+Shift+F3 exec pcmanfm_pkexec
+bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
@@ -134,15 +152,14 @@ set $ws7 7
 set $ws8 8
 
 # switch to workspace
-
-bindsym $mod+1 exec $HOME/.config/i3/smartmv 1
-bindsym $mod+2 exec $HOME/.config/i3/smartmv 2
-bindsym $mod+3 exec $HOME/.config/i3/smartmv 3
-bindsym $mod+4 exec $HOME/.config/i3/smartmv 4
-bindsym $mod+5 exec $HOME/.config/i3/smartmv 5
-bindsym $mod+6 exec $HOME/.config/i3/smartmv 6
-bindsym $mod+7 exec $HOME/.config/i3/smartmv 7
-bindsym $mod+8 exec $HOME/.config/i3/smartmv 8
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
 #bindsym $mod+Shift+1 move container to workspace $ws1
@@ -171,33 +188,33 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
-#for_window [title="alsamixer"] floating enable border pixel 1
-#for_window [class="calamares"] floating enable border normal
-#for_window [class="Clipgrab"] floating enable
-#for_window [title="File Transfer*"] floating enable
-#for_window [class="fpakman"] floating enable
-#for_window [class="Galculator"] floating enable border pixel 1
-#for_window [class="GParted"] floating enable border normal
-#for_window [title="i3_help"] floating enable sticky enable border normal
-#for_window [class="Lightdm-settings"] floating enable
-#for_window [class="Lxappearance"] floating enable sticky enable border normal
-#for_window [class="Manjaro-hello"] floating enable
-#for_window [class="Manjaro Settings Manager"] floating enable border normal
-#for_window [title="MuseScore: Play Panel"] floating enable
-#for_window [class="Nitrogen"] floating enable sticky enable border normal
-#for_window [class="Oblogout"] fullscreen enable
-#for_window [class="octopi"] floating enable
-#for_window [title="About Pale Moon"] floating enable
-#for_window [class="Pamac-manager"] floating enable
-#for_window [class="Pavucontrol"] floating enable
-#for_window [class="qt5ct"] floating enable sticky enable border normal
-#for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-#for_window [class="Simple-scan"] floating enable border normal
-#for_window [class="(?i)System-config-printer.py"] floating enable border normal
-#for_window [class="Skype"] floating enable border normal
-#for_window [class="Timeset-gui"] floating enable border normal
-#for_window [class="(?i)virtualbox"] floating enable border normal
-#for_window [class="Xfburn"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -257,17 +274,17 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate right --output DP-4 --mode 1920x1080 --pos 1080x350 --primary --output DP-3 --mode 1920x1080 --pos 3000x350
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b --experimental-backends
 exec --no-startup-id fcitx -d
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
+exec --no-startup-id flameshot
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+#exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -304,57 +321,50 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-# colours - taken from Solarised
-set $bg-color            #0A323D
-set $opaque-bg-color     argb:D8103C48
-set $inactive-bg-color   #0A323D
-set $text-color          #8E9C9D
-set $inactive-text-color #687D86
-set $urgent-bg-color     #32A19A
-set $urgent-text-color   #0A323D
-set $highlight-color     #2FD5D6
-
+exec_always --no-startup-id $HOME/.config/polybar/hack/launch.sh
+exec_always --no-startup-id $HOME/.config/i3/wallpaper
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	i3bar_command i3bar
-	status_command i3status
-	position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-
-    colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
-
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
-}
+#bar {
+#	i3bar_command i3bar
+#	status_command i3status
+#	position bottom
+#
+### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+##	tray_output primary
+##	tray_output eDP1
+#
+#	bindsym button4 nop
+#	bindsym button5 nop
+##   font xft:URWGothic-Book 11
+#	strip_workspace_numbers yes
+#
+#    colors {
+#        background #222D31
+#        statusline #F9FAF9
+#        separator  #454947
+#
+##                      border  backgr. text
+#        focused_workspace  #F9FAF9 #B81818 #EEE8D5
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+#}
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          $inactive-bg-color  $bg-color          $text-color          $urgent-bg-color $inactive-bg-color
-  client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $urgent-bg-color $inactive-bg-color
-  client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $urgent-bg-color $inactive-bg-color
-  client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-color   $urgent-bg-color $inactive-bg-color
+  client.focused          #532f35 #940a00 #80FFF9 #FDF6E3
+  client.focused_inactive #2F3D44 #B81818 #1ABC9C #454948
+  client.unfocused        #2F3D44 #B81818 #1ABC9C #454948
+  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
   client.background       #2B2C2B
-  
+
 #############################
 ### settings for i3-gaps: ###
 #############################
