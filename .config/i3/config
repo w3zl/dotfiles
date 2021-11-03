@@ -39,10 +39,6 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down 
@@ -76,6 +72,8 @@ bindsym $mod+Return exec --no-startup-id dmenu_run
 # split orientation
 bindsym $mod+Up split v;exec notify-send 'tile vertically'
 bindsym $mod+Right split h;exec notify-send 'tile horizontally'
+bindsym $mod+Down split v;exec notify-send 'tile vertically'
+bindsym $mod+Left split h;exec notify-send 'tile horizontally'
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -213,6 +211,10 @@ bindsym $mod+r mode "resize"
 
 # Lock screen
 bindsym $mod+9 exec --no-startup-id i3lock
+
+# gaps
+gaps inner 4 
+gaps outer 4
 
 # Autostart applications
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate right --output DP-4 --mode 1920x1080 --pos 1080x350 --primary --output DP-3 --mode 1920x1080 --pos 3000x350
