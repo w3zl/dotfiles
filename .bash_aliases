@@ -3,7 +3,7 @@
 #. ~/.bash_aliases                                                                                                     
 #fi
 
-la="ls -la"
+alias la="ls -la"
 alias vi="nvim"
 alias vim="nvim"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
