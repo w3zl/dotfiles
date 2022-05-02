@@ -1,17 +1,12 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mbbill/undotree'
-    Plug 'hlissner/zsh-autopair'
     Plug 'sheerun/vim-polyglot'
     Plug 'ycm-core/YouCompleteMe'
     Plug 'gruvbox-community/gruvbox'
-    Plug 'sjl/badwolf'
-    Plug 'joshdick/onedark.vim'
-    Plug 'NLKNguyen/papercolor-theme'
     Plug 'ervandew/supertab'
     Plug 'preservim/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'vim-scripts/indentpython.vim'
-"   Plug 'majutsushi/tagbar'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/AutoComplPop'
@@ -53,7 +48,7 @@ nmap <CR> o<Esc>
 map <C-s> :w<CR>
 
 nmap <leader><Up> :wincmd k<CR>
-map <leader><Down> :wincmd j<CR>
+nmap <leader><Down> :wincmd j<CR>
 nmap <leader><Left> :wincmd h<CR>
 nmap <leader><Right> :wincmd l<CR>
 nmap <leader>u :UndotreeShow<CR>
@@ -66,7 +61,6 @@ let NerdTreeQuitOnOpen = 1
 map <leader>f :NERDTreeToggle<CR>
 map <F2> :NERDTreeToggle<CR>
 
-" python auto complete
 
 " tags
 map <leader>t :TagbarToggle<CR>
@@ -84,4 +78,3 @@ let g:airline_theme='gruvbox'
 set background=dark
 
 highlight Normal guibg=none ctermbg=NONE
-
