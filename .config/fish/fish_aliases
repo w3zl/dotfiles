@@ -1,6 +1,0 @@
-alias la="ls -la"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias clip='xclip -selection c'

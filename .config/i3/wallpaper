@@ -1,3 +1,0 @@
-#!/bin/bash
-
-xwinwrap -g 1920x1080+1080+350 -ni -s -nf -b -ov -- mpv --mute=yes --no-audio --no-osc --no-osd-bar --quiet --screen=0 -wid WID --loop /mnt/hdd/SteamLibrary/steamapps/workshop/content/431960/1883241711/wallpaper\ ver.2\(0\).mp4
