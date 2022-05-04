@@ -13,20 +13,29 @@ HISTSIZE=300
 SAVEHIST=300
 HISTFILE=~/.zsh_history
 
-# Movement Keys
-
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+# Key bindings
+                                        # emacs key binding
+bindkey  "^[[H"   beginning-of-line     # home
+bindkey  "^[[F"   end-of-line           # end
+bindkey "^[[1;5C" forward-word          # ctrl + ->
+bindkey "^[[1;5D" backward-word         # ctrl + -<
 
 # Completion
-
 autoload -Uz compinit
-compinit
-
-zstyle ':completion:*' menu select
-setopt COMPLETE_ALIASES
+compinit -d ~/.cache/zcompdump
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Plugins
 plugins=(
@@ -39,3 +48,5 @@ export ZSH="/home/w1ezl/.oh-my-zsh"
 ZSH_THEME="apple"
 source $ZSH/oh-my-zsh.sh
 
+# Default editor
+export EDITOR="nvim"

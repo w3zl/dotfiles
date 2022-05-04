@@ -30,14 +30,11 @@ bindsym Print exec flameshot gui
 bindsym Mod1+Ctrl+t exec alacritty
 bindsym $mod+F3 exec pcmanfm
 
-# focus_follows_mouse no
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+semicolon focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -128,33 +125,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 # assign [class="Pcmanfm"] $ws3
 
 # Open specific applications in floating mode
-#for_window [title="alsamixer"] floating enable border pixel 1
-#for_window [class="calamares"] floating enable border normal
-#for_window [class="Clipgrab"] floating enable
-#for_window [title="File Transfer*"] floating enable
-#for_window [class="fpakman"] floating enable
-#for_window [class="Galculator"] floating enable border pixel 1
 #for_window [class="GParted"] floating enable border normal
-#for_window [title="i3_help"] floating enable sticky enable border normal
-#for_window [class="Lightdm-settings"] floating enable
-#for_window [class="Lxappearance"] floating enable sticky enable border normal
-#for_window [class="Manjaro-hello"] floating enable
-#for_window [class="Manjaro Settings Manager"] floating enable border normal
-#for_window [title="MuseScore: Play Panel"] floating enable
-#for_window [class="Nitrogen"] floating enable sticky enable border normal
-#for_window [class="Oblogout"] fullscreen enable
-#for_window [class="octopi"] floating enable
-#for_window [title="About Pale Moon"] floating enable
-#for_window [class="Pamac-manager"] floating enable
-#for_window [class="Pavucontrol"] floating enable
-#for_window [class="qt5ct"] floating enable sticky enable border normal
-#for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-#for_window [class="Simple-scan"] floating enable border normal
-#for_window [class="(?i)System-config-printer.py"] floating enable border normal
-#for_window [class="Skype"] floating enable border normal
-#for_window [class="Timeset-gui"] floating enable border normal
-#for_window [class="(?i)virtualbox"] floating enable border normal
-#for_window [class="Xfburn"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -163,54 +134,16 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
+bindsym Ctrl+Shift+h resize shrink width 10 px or 10 ppt
+bindsym Ctrl+Shift+k resize grow height 10 px or 10 ppt
+bindsym Ctrl+Shift+j resize shrink height 10 px or 10 ppt
+bindsym Ctrl+Shift+l resize grow width 10 px or 10 ppt
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id i3lock -c 000000
+bindsym $mod+9 exec --no-startup-id i3lock -c 
 
 # gaps
 gaps inner 4 
@@ -225,7 +158,5 @@ exec --no-startup-id fcitx -d
 exec --no-startup-id flameshot
 exec --no-startup-id redshift
 exec --no-startup-id xautolock -time 15 -locker i3lock
-exec --no-startup-id dicord --start-minimized
+exec --no-startup-id discord --start-minimized
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
