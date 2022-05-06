@@ -34,6 +34,7 @@ set fileformat=unix
 set expandtab 
 set smartindent
 set backspace=indent,eol,start
+set clipboard+=unnamedplus
 
 set fileformat=unix
 set encoding=utf-8
