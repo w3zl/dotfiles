@@ -3,6 +3,7 @@
 #. ~/.bash_aliases                                                                                                     
 #fi
 
+alias ls='ls --color=auto'
 alias la="ls -la"
 alias nvim='nvim ~/.config/nvim/init.vim'
 alias vi="/usr/bin/nvim"

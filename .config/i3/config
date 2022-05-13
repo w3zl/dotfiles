@@ -11,16 +11,10 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-################################################################################################
-### sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later!##
-################################################################################################
-
-
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
-##exec --no-startup-id pa-applet
-##bindsym $mod+Ctrl+m exec pavucontrol
+#exec --no-startup-id pa-applet
+bindsym $mod+Shift+m exec pavucontrol
 
 ################################################################################################
 
@@ -143,7 +137,7 @@ bindsym Ctrl+Shift+j resize shrink height 5 px or 5 ppt
 bindsym Ctrl+Shift+l resize grow width 5 px or 5 ppt
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id i3lock -c 
+bindsym $mod+9 exec --no-startup-id i3lock -c 000000
 
 # gaps
 gaps inner 4 

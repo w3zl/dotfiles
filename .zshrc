@@ -1,18 +1,16 @@
 # Setup prompt
-##autoload -Uz promptinit
-##promptinit
+autoload -U colors && colors
+
+function toon {
+  echo -n " ❥ "
+}
+
+PS1="%{$fg[yellow]%}$(toon)%{$reset_color%} %~/ %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
-
-#PS1
-autoload -U colors && colors
-function toon {
-  echo -n " ❥ "
-}
-PS1="%{$fg[yellow]%}$(toon)%{$reset_color%} %~/ %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
 
 # History
 
@@ -21,7 +19,6 @@ SAVEHIST=300
 HISTFILE=~/.zsh_history
 
 # Key bindings
-                                        # emacs key binding
 bindkey  "^[[H"   beginning-of-line     # home
 bindkey  "^[[F"   end-of-line           # end
 bindkey "^[[1;5C" forward-word          # ctrl + ->
@@ -49,11 +46,6 @@ plugins=(
 	git
 	zsh-autosuggestions
 )
-
-# OhMyZsh
-#export ZSH="/home/w1ezl/.oh-my-zsh"
-#ZSH_THEME="apple"
-#source $ZSH/oh-my-zsh.sh
 
 # Default editor
 export EDITOR="nvim"
