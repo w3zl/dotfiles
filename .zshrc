@@ -7,6 +7,13 @@ if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
 
+#PS1
+autoload -U colors && colors
+function toon {
+  echo -n " ❥ "
+}
+PS1="%{$fg[yellow]%}$(toon)%{$reset_color%} %~/ %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
+
 # History
 
 HISTSIZE=300
@@ -44,9 +51,9 @@ plugins=(
 )
 
 # OhMyZsh
-export ZSH="/home/w1ezl/.oh-my-zsh"
-ZSH_THEME="apple"
-source $ZSH/oh-my-zsh.sh
+#export ZSH="/home/w1ezl/.oh-my-zsh"
+#ZSH_THEME="apple"
+#source $ZSH/oh-my-zsh.sh
 
 # Default editor
 export EDITOR="nvim"
