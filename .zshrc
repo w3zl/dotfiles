@@ -22,7 +22,7 @@ bindkey  "^[[H"   beginning-of-line     # home
 bindkey  "^[[F"   end-of-line           # end
 bindkey "^[[1;5C" forward-word          # ctrl + ->
 bindkey "^[[1;5D" backward-word         # ctrl + -<
-autoload -U select-word-style && slect-word-style bash
+autoload -U select-word-style && select-word-style bash
 
 # Completion
 autoload -Uz compinit

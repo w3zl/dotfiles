@@ -57,7 +57,8 @@ floating_modifier $mod
 bindsym Ctrl+Shift+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Return exec --no-startup-id dmenu_run
+#bindsym $mod+Return exec --no-startup-id dmenu_run
+bindsym $mod+Return exec --no-startup-id rofi -show run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # split orientation
