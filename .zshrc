@@ -13,7 +13,6 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # History
-
 HISTSIZE=300
 SAVEHIST=300
 HISTFILE=~/.zsh_history
@@ -23,6 +22,7 @@ bindkey  "^[[H"   beginning-of-line     # home
 bindkey  "^[[F"   end-of-line           # end
 bindkey "^[[1;5C" forward-word          # ctrl + ->
 bindkey "^[[1;5D" backward-word         # ctrl + -<
+autoload -U select-word-style && slect-word-style bash
 
 # Completion
 autoload -Uz compinit
