@@ -1,6 +1,4 @@
 # Set Mod key to CapsLock on Hold/ Escape to CapsLock on Push
-exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xcape -e "Hyper_L=Escape"
 set $mod Mod4
 set $alt Mod1
 
