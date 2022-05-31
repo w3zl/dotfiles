@@ -5,7 +5,7 @@ function toon {
   echo -n " ❥ "
 }
 
-PS1="%{$fg[yellow]%}$(toon)%{$reset_color%} %~/ %{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
+PS1="%{$fg[yellow]%}%~$(toon)%{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then
@@ -49,3 +49,4 @@ plugins=(
 
 # Default editor
 export EDITOR="nvim"
+export PATH="$PATH:$HOME/scripts"

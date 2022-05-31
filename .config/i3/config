@@ -22,6 +22,8 @@ bindsym $mod+$alt+p exec pcmanfm
 bindsym $mod+$alt+f exec firefox 
 bindsym Print exec flameshot gui
 bindsym $mod+9 exec --no-startup-id i3lock -c 000000
+bindsym $mod+p exec polybar-msg cmd toggle
+bindsym $mod+Return exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -92,7 +94,7 @@ assign [class="discord"] $ws7
 
 # reload/restart the configuration file
 bindsym $mod+$alt+c reload
-bindsym $mod+$alt+r restart
+bindsym $mod+$alt+r restart; exec xmodmap ~/.Xmodmap; exec xcape -e "Hyper_L=Escape"
 
 # resize window (you can also use the mouse for that)
 bindsym Ctrl+Shift+h resize shrink width 5 px or 5 ppt
@@ -105,13 +107,7 @@ gaps inner 4
 gaps outer 4
 
 # Autostart applications
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate right --output HDMI-2 --mode 1920x1080 --pos 1080x350 --primary --output DP-2 --mode 1920x1080 --pos 3000x350
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b --experimental-backends
-exec_always --no-startup-id $HOME/.config/polybar/colorblocks/launch.sh 
-bindsym $mod+Return exec --no-startup-id rofi -show run
-exec --no-startup-id fcitx -d
-exec --no-startup-id flameshot
-exec --no-startup-id redshift
+exec --no-startup-id autotiling
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xautolock -time 15 -locker i3lock
 exec --no-startup-id discord --start-minimized
