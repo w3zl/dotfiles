@@ -2,10 +2,10 @@
 autoload -U colors && colors
 
 function toon {
-  echo -n " ❥ "
+  echo -n "   ❥  "
 }
 
-PS1="%{$fg[yellow]%}%~$(toon)%{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
+PS1="%{$fg[yellow]%}$(toon)%~ %{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then

@@ -6,6 +6,9 @@ set $alt Mod1
 default_border pixel 2
 default_floating_border normal
 hide_edge_borders none
+gaps inner 10 
+gaps outer 4
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 font xft:URWGothic-Book 11
@@ -53,10 +56,10 @@ bindsym $mod+Left split h;exec notify-send 'tile horizontally'
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
-#bindsym $mod+space floating toggle
+bindsym $mod+i floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+$alt+i focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -97,14 +100,10 @@ bindsym $mod+$alt+c reload
 bindsym $mod+$alt+r restart; exec xmodmap ~/.Xmodmap; exec xcape -e "Hyper_L=Escape"
 
 # resize window (you can also use the mouse for that)
-bindsym Ctrl+Shift+h resize shrink width 5 px or 5 ppt
-bindsym Ctrl+Shift+k resize grow height 5 px or 5 ppt
-bindsym Ctrl+Shift+j resize shrink height 5 px or 5 ppt
-bindsym Ctrl+Shift+l resize grow width 5 px or 5 ppt
-
-# gaps
-gaps inner 4 
-gaps outer 4
+bindsym $mod+Shift+h resize shrink width 100 px or 100 ppt
+bindsym $mod+Shift+k resize grow height 100 px or 100 ppt
+bindsym $mod+Shift+j resize shrink height 100 px or 100 ppt
+bindsym $mod+Shift+l resize grow width 100 px or 100 ppt
 
 # Autostart applications
 exec --no-startup-id autotiling
