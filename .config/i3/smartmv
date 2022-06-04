@@ -4,4 +4,5 @@ target=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true) | select(.v
 i3-msg workspace "$1"
 i3-msg move workspace to output $target 
 sleep 0.2 
-i3-msg focus output $target
+i3-msg workspace "$1"
+#i3-msg focus output $target
