@@ -21,10 +21,12 @@ syntax on
 set nu relativenumber
 set tabstop=4 softtabstop=4 
 set hidden " hidden buffer (no write)
+"set nowrap
+set backspace=indent,eol,start
+
 set exrc
 set nohlsearch  
 set errorbells
-set nowrap
 set laststatus=2
 set noswapfile
 set nobackup
@@ -34,7 +36,6 @@ set autoindent
 set fileformat=unix
 set expandtab 
 set smartindent
-set backspace=indent,eol,start
 
 let mapleader = " "
 

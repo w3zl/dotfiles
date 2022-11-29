@@ -3,6 +3,8 @@
 #. ~/.bash_aliases                                                                                                     
 #fi
 
+alias shut='systemctl poweroff'
+alias line='wine /home/w1ezl/.wine/drive_c/users/w1ezl/AppData/Local/LINE/bin/LineLauncher.exe'
 alias ls='ls --color=auto'
 alias la="ls -la"
 alias nvim='nvim ~/.config/nvim/init.vim'

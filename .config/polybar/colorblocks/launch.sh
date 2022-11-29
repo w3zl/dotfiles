@@ -19,5 +19,5 @@ sleep 1
 
 # Launch the bar
 for m in $OTHERS; do
-	MONITOR=$m polybar -q main -c "$DIR"/config.ini &
+#	MONITOR=$m polybar -q main -c "$DIR"/config.ini &
 done
