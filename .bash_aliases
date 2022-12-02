@@ -2,6 +2,9 @@
 #if [ -f ~/.bash_aliases ]; then                                                                                       
 #. ~/.bash_aliases                                                                                                     
 #fi
+if [ -f ~/.bash_aliases_private ]; then
+    . ~/.bash_aliases_private
+fi
 
 alias shut='systemctl poweroff'
 alias line='wine /home/w1ezl/.wine/drive_c/users/w1ezl/AppData/Local/LINE/bin/LineLauncher.exe'
