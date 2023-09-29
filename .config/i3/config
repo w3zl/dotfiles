@@ -23,8 +23,8 @@ bindsym $mod+t exec alacritty
 bindsym $mod+m exec pavucontrol
 bindsym $mod+a exec anki
 bindsym $mod+$alt+f exec firefox 
-bindsym Print exec flameshot gui
-bindsym Scroll_Lock exec --no-startup-id i3lock -c 000000
+bindsym $mod+$alt+s exec flameshot gui
+bindsym $mod+0 exec --no-startup-id i3lock -c 000000
 bindsym $mod+p exec polybar-msg cmd toggle
 bindsym $mod+Return exec --no-startup-id rofi -show run
 

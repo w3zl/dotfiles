@@ -53,7 +53,7 @@ export PATH="$PATH:$HOME/scripts"
 
 # lf
 LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
-LFCD="/home/w1ezl/.config/lf/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
+LFCD="$HOME/.config/lf/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
 if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
