@@ -1,0 +1,11 @@
+rules:
+- window-class: 'Alacritty'
+- default-opacity: 0.8
+- window-class: 'Anki'
+- default-opacity: 0.8
+- window-class: 'ticktick'
+- default-opacity: 0.8
+- window-class: 'discord'
+- default-opacity: 0.8
+- window-class: 'Nitrogen'
+- default-opacity: 0.7
