@@ -18,6 +18,7 @@ SAVEHIST=300
 HISTFILE=~/.zsh_history
 
 # Key bindings
+bindkey -e                              # emacs mode
 bindkey  "^[[H"   beginning-of-line     # home
 bindkey  "^[[F"   end-of-line           # end
 bindkey "^[[1;5C" forward-word          # ctrl + ->
@@ -45,6 +46,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 plugins=(
 	git
 	zsh-autosuggestions
+    sudo
 )
 
 # Default editor

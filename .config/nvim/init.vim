@@ -21,6 +21,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
+if filereadable('./.vim')
+    source ./.vim
+endif
+
 syntax on
 set nu relativenumber
 set tabstop=4 softtabstop=4 
