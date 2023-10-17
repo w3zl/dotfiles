@@ -48,10 +48,9 @@ set smartindent
 let mapleader = " "
 
 " Clipboard 'y'
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
-endfunction
-vnoremap y y:call ClipboardYank()<cr>
+set clipboard+=unnamedplus
+nnoremap d "_d
+vnoremap d "_d
 
 " Encoding
 set fileformat=unix
