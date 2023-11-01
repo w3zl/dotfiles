@@ -13,8 +13,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # History
-HISTSIZE=300
-SAVEHIST=300
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Key bindings

@@ -62,6 +62,17 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" Auto Sudo
+autocmd BufWritePre * silent! call CheckSudo()
+function! CheckSudo()
+  if !filewritable(bufname('%'))
+    let l:choice = input("File not writable. Use sudo? (y/n): ")
+    if l:choice == 'y'
+      :w !sudo tee % > /dev/null
+    endif
+  endif
+endfunction
+
 " KeyBinds
 nmap <CR> o<Esc> 
 map <C-s> :w<CR>
