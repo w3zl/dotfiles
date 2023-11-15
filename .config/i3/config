@@ -45,6 +45,7 @@ floating_modifier $mod
 
 # kill focused window
 bindsym $mod+w kill
+bindsym Control+Mod1+BackSpace exec kill -9 $(xdotool getactivewindow getwindowpid)
 
 # split orientation
 bindsym $mod+Up split v;exec notify-send 'tile vertically'
@@ -71,6 +72,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
+set $ws9 "9"
 
 # switch to workspace
 bindsym $mod+1 exec ~/.config/i3/smartmv 1
@@ -81,7 +83,7 @@ bindsym $mod+5 exec ~/.config/i3/smartmv 5
 bindsym $mod+6 exec ~/.config/i3/smartmv 6
 bindsym $mod+7 exec ~/.config/i3/smartmv 7
 bindsym $mod+8 exec ~/.config/i3/smartmv 8
-bindsym $mod+9 exec ~/.config/i3/smartmv 9
+bindsym $mod+9 workspace 9
 
 # move focused container to workspace
 bindsym $mod+$alt+1 move container to workspace number $ws1
@@ -105,13 +107,13 @@ for_window [class="zoom" title="Zoom Meeting"] floating disabled
 
 # reload/restart the configuration file
 bindsym $mod+$alt+c reload
-bindsym $mod+$alt+r restart; exec xmodmap ~/.Xmodmap; exec xcape -e "Hyper_L=Escape"
+bindsym $mod+$alt+r restart; exec ~/scripts/fixkey
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+Shift+h resize shrink width 100 px or 100 ppt
-bindsym $mod+Shift+k resize grow height 100 px or 100 ppt
-bindsym $mod+Shift+j resize shrink height 100 px or 100 ppt
-bindsym $mod+Shift+l resize grow width 100 px or 100 ppt
+# bindsym $mod+Shift+h resize shrink width 100 px or 100 ppt
+# bindsym $mod+Shift+k resize grow height 100 px or 100 ppt
+# bindsym $mod+Shift+j resize shrink height 100 px or 100 ppt
+# bindsym $mod+Shift+l resize grow width 100 px or 100 ppt
 
 #i3 bar
 bar {
