@@ -59,3 +59,6 @@ LFCD="$HOME/.config/lf/lfcd.sh"                                #  pre-built bina
 if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
+
+# fzf
+bindkey -s ^f "tmux-sessionizer\n"

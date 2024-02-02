@@ -27,5 +27,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias clip='xclip -selection c'
 alias vpnip='ip -4 a show tun0'
 alias color='gcolor2 2>/dev/null &'
-alias myip='curl -4 https://ifconfig.me'
+alias ipv4='echo "${curl -4 https://ifconfig.me} "'
 #https://www.atlassian.com/git/tutorials/dotfiles

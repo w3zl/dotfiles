@@ -21,12 +21,11 @@ floating_modifier $mod
 # Applications Shortcuts
 bindsym $mod+t exec alacritty
 bindsym $mod+m exec pavucontrol
-bindsym $mod+a exec anki
 bindsym $mod+$alt+f exec firefox 
 bindsym $mod+$alt+s exec flameshot gui
 bindsym $mod+0 exec --no-startup-id i3lock -c 000000
-bindsym $mod+p exec polybar-msg cmd toggle
 bindsym $mod+Return exec --no-startup-id rofi -show run
+bindsym --release $mod+v exec --no-startup-id i3-msg 'exec xdotool type "$(xclip -o)"'
 
 # change focus
 bindsym $mod+h focus left
@@ -108,6 +107,8 @@ for_window [class="zoom" title="Zoom Meeting"] floating disabled
 # reload/restart the configuration file
 bindsym $mod+$alt+c reload
 bindsym $mod+$alt+r restart; exec ~/scripts/fixkey
+
+# paste
 
 # resize window (you can also use the mouse for that)
 # bindsym $mod+Shift+h resize shrink width 100 px or 100 ppt
