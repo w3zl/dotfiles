@@ -71,15 +71,22 @@ map <C-s> :w<CR>
 map <C-w> :bd<CR> "Deletes buffer (tab)
 
 " Split?
-nmap <leader><Up> :wincmd k<CR>
-nmap <leader><Down> :wincmd j<CR>
-nmap <leader><Left> :wincmd h<CR>
-nmap <leader><Right> :wincmd l<CR>
+" nmap <leader><Up> :wincmd k<CR>
+" nmap <leader><Down> :wincmd j<CR>
+" nmap <leader><Left> :wincmd h<CR>
+" nmap <leader><Right> :wincmd l<CR>
 
 " Nerd Tree
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
-nmap <F2> :NERDTreeToggle<CR>
+nmap <C-t> :NERDTreeToggle<CR>
+nmap <C-f> :NERDTreeFind<CR>
+
+" Split Navigation
+" nmap <C-h> <C-w>h
+" nmap <C-j> <C-w>j
+" nmap <C-k> <C-w>k
+" nmap <C-l> <C-w>l
 
 " Tabs Buffer Settings form Airline
 let g:airline#extensions#tabline#enabled=1

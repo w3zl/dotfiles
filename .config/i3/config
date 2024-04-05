@@ -82,7 +82,7 @@ bindsym $mod+5 exec ~/.config/i3/smartmv 5
 bindsym $mod+6 exec ~/.config/i3/smartmv 6
 bindsym $mod+7 exec ~/.config/i3/smartmv 7
 bindsym $mod+8 exec ~/.config/i3/smartmv 8
-bindsym $mod+9 workspace 9
+bindsym $mod+9 exec ~/.config/i3/smartmv 9
 
 # move focused container to workspace
 bindsym $mod+$alt+1 move container to workspace number $ws1
@@ -123,7 +123,7 @@ bar {
 
 # Autostart applications
 exec --no-startup-id autotiling
-exec --no-startup-id flashfocus
+#exec --no-startup-id flashfocus
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xautolock -time 60 -locker i3lock
 exec --no-startup-id discord --start-minimized
