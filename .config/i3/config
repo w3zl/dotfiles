@@ -29,9 +29,10 @@ bindsym --release $mod+v exec --no-startup-id i3-msg 'exec xdotool type "$(xclip
 
 # change focus
 bindsym $mod+h focus left
+bindsym $mod+l focus right
 bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+p exec ~/.config/i3/back_and_forth
 
 # move focused window
 bindsym $mod+$alt+h move left
