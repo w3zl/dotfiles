@@ -16,6 +16,20 @@ function nvim() {
     fi
 }
 
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
 alias shut='systemctl poweroff'
 #alias line='wine /home/w3zl/.wine/drive_c/users/w1ezl/AppData/Local/LINE/bin/LineLauncher.exe'
 alias ls='ls --color=auto'
@@ -26,6 +40,7 @@ alias vim=nvim
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 
 alias clip='wl-copy'
 alias vpnip='ip -4 a show tun0'
+#alias paru='paru --noconfirm'
 #alias color='gcolor2 2>/dev/null &'
 alias ipv4='echo "${curl -4 https://ifconfig.me} "'
 #https://www.atlassian.com/git/tutorials/dotfiles

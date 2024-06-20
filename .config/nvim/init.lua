@@ -52,6 +52,9 @@ vim.o.smartindent = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.encoding = 'utf-8'
 vim.o.fileencoding = 'utf-8'
+vim.o.undofile = true
+vim.o.undodir = vim.fn.expand "~/.cache/nvim/undo"
+
 
 -- Mappings
 vim.api.nvim_set_keymap('n', '<CR>', 'o<Esc>', {noremap = true})
@@ -59,10 +62,11 @@ vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', {noremap = true})
 
 -- NERDTree config
-vim.g.NERDTreeQuitOnOpen = 1
+vim.g.NERDTreeQuitOnOpen = 0
 vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeMapOpenInTab = 't'
+vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeToggle<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeFind<CR>', {noremap = true})
 
 -- Airline settings
 vim.g.airline_theme = 'gruvbox'

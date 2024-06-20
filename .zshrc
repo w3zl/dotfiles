@@ -1,11 +1,11 @@
 # Setup prompt
 autoload -U colors && colors
 
-function toon {
-  echo -n "❥  "
+function arch {
+  echo -n "󰣇 "
 }
 
-PS1="%{$fg[yellow]%}$(toon)%~ %{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
+PS1="%F{#9867c5}$(arch)%~%f %{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then
@@ -53,12 +53,5 @@ plugins=(
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/scripts"
 
-# lf
-LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
-LFCD="$HOME/.config/lf/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-fi
-
 # fzf
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^f "lf\n"
