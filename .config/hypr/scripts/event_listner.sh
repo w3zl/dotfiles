@@ -7,7 +7,8 @@ handle() {
   IFS=',' read -r -a EVENT_VARS <<< "$EVENT_VAR"
 
   case $EVENT_NAME in
-    workspace) ./num_overlay.sh "$EVENT_VAR";;
+    workspace) $HOME/.config/hypr/scripts/num_overlay.sh "$EVENT_VAR";;
+    focusedmon) $HOME/.config/hypr/scripts/num_overlay.sh "${EVENT_VARS[1]}"
   esac
 }
 

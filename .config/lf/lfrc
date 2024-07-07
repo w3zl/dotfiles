@@ -12,6 +12,9 @@ map <enter> shell
 map x $$f
 map X !$f
 
+
+map d delete
+
 #toggle hidden
 map . set hidden!
 
@@ -20,3 +23,5 @@ map C ${{ echo 'add dotfile?[y/n]' && read ans && [ "$ans" = 'y' ] && /usr/bin/g
 
 push mw
 map q push 'w:quit<enter>
+
+set previewer "/home/w3zL/.config/lf/scripts/preview.sh"
