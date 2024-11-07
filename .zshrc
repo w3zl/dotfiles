@@ -27,7 +27,7 @@ autoload -U select-word-style && select-word-style bash
 
 # Completion
 autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
+compinit -C -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete
