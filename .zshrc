@@ -52,6 +52,9 @@ plugins=(
 # Default editor
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/scripts"
+if [[ -z "${SSH_CONNECTION}" ]]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
 
 # fzf
 bindkey -s ^f "lf\n"

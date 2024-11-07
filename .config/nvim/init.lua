@@ -75,6 +75,12 @@ vim.g.airline_extensions_tabline_fnamemode = ':t'
 vim.api.nvim_set_keymap('n', '<C-h>', ':bp<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-l>', ':bn<CR>', {noremap = true})
 
+-- Fcitx Alt+`
+vim.api.nvim_set_keymap('n', '<A-`>', '<nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-`>', '<nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-`>', '<nop>', { noremap = true, silent = true })
+
+
 -- Lua configurations for Treesitter, LSP, and CMP
     --require('treesitter_config')
     -- require('lsp_config')
