@@ -1,18 +1,23 @@
 {
     "layer": "top",
     "output": "DP-1",
+//    "mode": "overlay",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["tray"],
     "hyprland/workspaces": {
-        "all-outputs": true,
+        "format": "{name}",
+        "active-only": true,
+        "all-outputs": false
     },
     "hyprland/window": {
         "max-length": 50,
 	    "separate-outputs": false
     },
     "position": "bottom",
+    "margin-left":20,
     "clock": {
         "format": "{:%a, %b %d %H:%M}"
-    }
+    },
+    "reload_style_on_change": true
 }
