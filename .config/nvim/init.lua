@@ -12,18 +12,26 @@ require('packer').startup(function()
 
     -- LSP and Completion
     use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin  
+    --use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    --use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+    --use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+    --use 'L3MON4D3/LuaSnip' -- Snippets plugin  
 
     -- Syntax Highlighting
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    --use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- Themes
     use 'scottmckendry/cyberdream.nvim'
     use 'gruvbox-community/gruvbox'
     use 'EdenEast/nightfox.nvim'
+
+    -- Remote (Rsync)
+    use {'kenn7/vim-arsync',
+        requires = {
+            {'prabirshrestha/async.vim'}
+        }
+    }
+
 end)
 
 -- Theme
@@ -80,6 +88,44 @@ vim.api.nvim_set_keymap('n', '<A-`>', '<nop>', { noremap = true, silent = true }
 vim.api.nvim_set_keymap('i', '<A-`>', '<nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<A-`>', '<nop>', { noremap = true, silent = true })
 
+
+-- LSP
+vim.diagnostic.config({
+    virtual_text = true,
+    update_in_insert = false, 
+    signs = true,
+    underline = true,
+})
+
+vim.lsp.set_log_level("debug")
+local util = require("lspconfig.util")
+require('lspconfig').volar.setup{
+  filetypes = { 'vue', 'javascript' },
+  root_dir = util.root_pattern("vue.config.js", "vite.config.js", 'package.json'),
+  init_options = {
+    typescript = {
+        tsdk = '/home/w3zL/node_modules/typescript/lib',
+    },
+    vue = {
+      hybridMode = false,
+    },
+    languageFeatures = {
+        diagnostics = true,
+    },
+  },
+}
+--
+--require('lspconfig').volar.setup({
+--  filetypes = { 'vue', 'javascript' },
+--  init_options = {
+--    typescript = {
+--        tsdk = '/home/w3zL/node_modules/typescript/lib',
+--    },
+--    languageFeatures = {
+--      diagnostics = true  -- Ensure diagnostics are enabled
+--    }
+--  }
+--})
 
 -- Lua configurations for Treesitter, LSP, and CMP
     --require('treesitter_config')
