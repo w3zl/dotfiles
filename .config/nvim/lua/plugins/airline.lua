@@ -1,4 +1,5 @@
 return {
+    { 'vim-airline/vim-airline-themes' },
     { 
 	'vim-airline/vim-airline',
         config = function()
@@ -9,5 +10,4 @@ return {
             vim.api.nvim_set_keymap('n', '<C-l>', ':bn<CR>', { noremap = true })
         end,
     },
-    { 'vim-airline/vim-airline-themes' },
 }

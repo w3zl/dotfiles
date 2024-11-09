@@ -18,8 +18,6 @@ return {
 
             -- Configure Volar LSP for Vue and JavaScript
             require('lspconfig').volar.setup{
-                filetypes = { 'vue', 'javascript' },
-                root_dir = util.root_pattern("vue.config.js", "vite.config.js", 'package.json'),
                 init_options = {
                     typescript = {
                         tsdk = '/home/w3zL/node_modules/typescript/lib',
@@ -32,6 +30,9 @@ return {
                     },
                 },
             }
+
+            -- Intelephense LSP for PHP
+            require'lspconfig'.intelephense.setup{}
         end,
     }
 }
