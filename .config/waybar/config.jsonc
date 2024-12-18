@@ -6,7 +6,18 @@
     "modules-center": ["clock"],
     "modules-right": ["tray"],
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九"
+        },
         "active-only": true,
         "all-outputs": false
     },
@@ -14,8 +25,8 @@
         "max-length": 50,
 	    "separate-outputs": false
     },
-    "position": "bottom",
-    "margin-left":20,
+    "position": "top",
+    "margin-left":30,
     "clock": {
         "format": "{:%a, %b %d %H:%M}"
     },

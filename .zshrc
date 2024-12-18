@@ -5,7 +5,13 @@ function arch {
   echo -n "󰣇 "
 }
 
-PS1="%F{#9867c5}$(arch)%~%f %{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
+function vue {
+  echo -n ""
+}
+
+export PS1_COLOR="%F{#9867c5}"
+
+PS1="${PS1_COLOR}$(arch)%~%f %{$reset_color%}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}"
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then
@@ -55,6 +61,8 @@ export PATH="$PATH:$HOME/scripts"
 if [[ -z "${SSH_CONNECTION}" ]]; then
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
+
+
 
 # fzf
 bindkey -s ^f "lf\n"

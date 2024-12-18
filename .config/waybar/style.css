@@ -11,3 +11,17 @@
   color: #ffffff;
   background: transparent;
 }
+
+
+#workspaces label {
+  font-size: 18px;
+  font-family: "ToronoGlitchSans H3", sans-serif;
+  text-shadow:-1px -1px 0 cyan, 1px 1px 0 magenta;
+}
+
+.modules-right {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 0 20px;
+  padding: 0 10px;
+}
