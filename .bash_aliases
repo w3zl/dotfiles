@@ -37,7 +37,7 @@ alias la="ls -la"
 #alias nvim='nvim ~/.config/nvim/init.vim'
 #alias vi=nvim
 alias vim=nvim
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
 alias clip='wl-copy'
 alias vpnip='ip -4 a show tun0'
 #alias paru='paru --noconfirm'
