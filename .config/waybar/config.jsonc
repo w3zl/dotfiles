@@ -1,6 +1,8 @@
 {
-    "layer": "top",
+//    "layer": "top",
     "output": "DP-1",
+    "output": "DP-3",
+    "layer": "top",
 //    "mode": "overlay",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
