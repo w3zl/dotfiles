@@ -5,23 +5,21 @@ set ifs "\n"
 set scrolloff 10
 set number true
 
-# use enter for shell commands
-map <enter> shell
+map : shell
 
 # execute current file (must be executable)
 map x $$f
 map X !$f
 
-
 map d delete
 
-#toggle hidden
 map . set hidden!
 
 #dotfiles
 map C ${{ echo 'add dotfile?[y/n]' && read ans && [ "$ans" = 'y' ] && /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add $f; echo "added $f" && sleep 0.3 || echo 'cancelled.' }}
 
 push mw
-map q push 'w:quit<enter>
+map q push 'w:quit<enter>'
 
-set previewer "/home/w3zL/.config/lf/scripts/preview.sh"
+set previewer ~/.config/lf/scripts/previewer_kitty
+set cleaner   ~/.config/lf/scripts/cleaner_kitty
