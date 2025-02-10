@@ -5,7 +5,7 @@ set ifs "\n"
 set scrolloff 10
 set number true
 
-map : shell
+map enter shell
 
 # execute current file (must be executable)
 map x $$f
@@ -18,8 +18,10 @@ map . set hidden!
 #dotfiles
 map C ${{ echo 'add dotfile?[y/n]' && read ans && [ "$ans" = 'y' ] && /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add $f; echo "added $f" && sleep 0.3 || echo 'cancelled.' }}
 
+set cleaner   ~/.config/lf/scripts/cleaner_kitty
+set previewer ~/.config/lf/scripts/previewer_kitty
+
 push mw
 map q push 'w:quit<enter>'
 
-set previewer ~/.config/lf/scripts/previewer_kitty
-set cleaner   ~/.config/lf/scripts/cleaner_kitty
+
