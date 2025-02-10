@@ -1,12 +1,12 @@
 {
-//    "layer": "top",
     "output": "DP-1",
     "output": "DP-3",
     "layer": "top",
-//    "mode": "overlay",
+    "position": "top",
+    "margin-left":30,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray"],
+    "modules-right": ["tray", "wireplumber"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -27,8 +27,12 @@
         "max-length": 50,
 	    "separate-outputs": false
     },
-    "position": "top",
-    "margin-left":30,
+    "wireplumber": {
+	    "format": " {volume}%",
+	    "format-muted": "",
+        "scroll-step": 5,
+	    "on-click": "pavucontrol"
+    },
     "clock": {
         "format": "{:%a, %b %d %H:%M}"
     },
