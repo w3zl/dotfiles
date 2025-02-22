@@ -44,5 +44,5 @@ alias vpnip='ip -4 a show tun0'
 #alias color='gcolor2 2>/dev/null &'
 alias ipv4='echo "${curl -4 https://ifconfig.me} "'
 alias steam='gamescope -e -W 1920 -H 1080 -r 240 -- steam'
-alias hyprexec='hyprctl dispatch exec'
+alias hyprexec='hyprctl dispatch -- exec'
 #https://www.atlassian.com/git/tutorials/dotfiles
