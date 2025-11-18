@@ -42,14 +42,22 @@ return {
         -- ⚡ Actions / Behavior
         actions = {
           open_file = {
-            quit_on_open = false, -- Keep NvimTree open after opening a file
+            quit_on_open = true, -- Keep NvimTree open after opening a file
             resize_window = true, -- Resize NvimTree when opening files
           },
+        },
+
+        update_focused_file = {
+          enable = true,
+          update_cwd = true,
         },
       })
 
       --vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true }) -- Toggle NvimTree Shortcut
       vim.keymap.set("n", "<Esc>", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true }) -- Toggle NvimTree Shortcut
+      local api = require("nvim-tree.api")
+      vim.keymap.set("n", "<CR>", api.node.open.tab, { buffer = bufnr, noremap = true, silent = true, nowait = true }) -- Default newtab
+
     end
   }
 }

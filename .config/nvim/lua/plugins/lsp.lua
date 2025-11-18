@@ -2,6 +2,9 @@ return {
     {
         'neovim/nvim-lspconfig',
         config = function()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
+
             -- Configure diagnostics
             vim.diagnostic.config({
                 virtual_text = true,
@@ -16,23 +19,24 @@ return {
             -- Load necessary module
             local util = require("lspconfig.util")
 
-            -- Configure Volar LSP for Vue and JavaScript
-            require('lspconfig').volar.setup{
-                init_options = {
-                    typescript = {
-                        tsdk = '/home/w3zL/node_modules/typescript/lib',
-                    },
-                    vue = {
-                        hybridMode = false,
-                    },
-                    languageFeatures = {
-                        diagnostics = true,
-                    },
+            lspconfig.volar.setup{
+              capabilities = capabilities,
+              filetypes = { "vue" },
+              init_options = {
+                typescript = {
+                  tsdk = "/usr/lib/node_modules/typescript/lib",
                 },
+              }
             }
 
-            -- Intelephense LSP for PHP
-            require'lspconfig'.intelephense.setup{}
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities,
+                filetypes = { "javascript", "typescript", },
+            })
+
+            lspconfig.intelephense.setup({
+              capabilities = capabilities,
+            })
         end,
     }
 }

@@ -1,11 +1,11 @@
 {
-    "output": "DP-1",
+    "output": "DP-2",
     "layer": "top",
     "position": "top",
     "margin-left":30,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "wireplumber"],
+    "modules-center": [""],
+    "modules-right": ["tray", "wireplumber", "clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -33,7 +33,7 @@
 	    "on-click": "pavucontrol"
     },
     "clock": {
-        "format": "{:%a, %b %d %H:%M}"
+        "format": "{:%a, %b %d \n%H:%M}"
     },
     "reload_style_on_change": true
 }

@@ -19,9 +19,15 @@
   text-shadow:-1px -1px 0 cyan, 1px 1px 0 magenta;
 }
 
+#clock{
+  font-family: "ToronoGlitchSans H3", sans-serif;
+  font-size: 9px;
+  padding-left: 10px;
+}
+
 .modules-right {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+/*  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;*/
   margin: 0 20px;
   padding: 0 10px;
 }
