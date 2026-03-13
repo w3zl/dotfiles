@@ -7,9 +7,10 @@ return {
         
         -- 🌲 File View Settings
         view = {
-          width = 30, -- Default width of the tree
-          side = "left", -- Position of the tree (left, right)
-          adaptive_size = false, -- Keep a fixed width
+          width = 30, 
+          side = "left",
+          adaptive_size = false,
+          relativenumber = true,
         },
 
         -- 🎨 Renderer (Visual tweaks)

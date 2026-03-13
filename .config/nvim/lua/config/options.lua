@@ -23,6 +23,7 @@ vim.o.fileencoding = 'utf-8'
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand "~/.cache/nvim/undo"
 
+vim.o.autoread = true
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
@@ -30,4 +31,5 @@ vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
+
 

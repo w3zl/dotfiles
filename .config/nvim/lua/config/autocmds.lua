@@ -1,3 +1,4 @@
+
 vim.api.nvim_create_autocmd("BufEnter", {
     pattern = {
         "/home/w3zL/Documents/Partner/*",
@@ -14,4 +15,9 @@ vim.api.nvim_create_autocmd("BufReadPre", {
       vim.cmd('source ' .. path)
     end
   end
+})
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = "*",
 })

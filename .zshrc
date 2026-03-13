@@ -78,3 +78,10 @@ if [[ -z "${SSH_CONNECTION}" ]]; then
 fi
 
 
+
+# bun completions
+[ -s "/home/w3zL/.bun/_bun" ] && source "/home/w3zL/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define an array of application classes to check
-apps=("Steam" "TickTick" "betterbird")
+apps=("Steam" "TickTick" "betterbird" "dev.zed.Zed")
 
 # Get the active window's class
 active_window_class=$(hyprctl activewindow -j | jq -r ".class")
